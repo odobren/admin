@@ -3,28 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Желтый сайт</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Административная панель</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .admin-menu {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .admin-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .admin-menu ul li {
+            margin-bottom: 10px;
+        }
+        .admin-menu ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .admin-menu ul li a:hover {
+            color: blue;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: darkblue;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Желтый сайт</h1>
-        <nav>
+    <div class="container">
+        <div class="admin-menu">
+            <h2>Меню администратора</h2>
             <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Рабочее время</a></li>
+                <li><a href="#">Настройки</a></li>
+                <li><a href="#">Пользователи</a></li>
+                <li><a href="#">Статистика</a></li>
+                <li><a href="#" id="btnWorkingHours">Рабочее время</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <button onclick="openSchedule()">Рабочее время</button>
-    </main>
-    <footer>
-        <p>&copy; 2024 Желтый сайт</p>
-    </footer>
-    <script src="script.js"></script>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btnWorkingHours').addEventListener('click', function() {
+            window.location.href = 'https://docs.google.com/spreadsheets/d/1S46rWz7XGKtt21wggySyaFjcHKFvmxsdfjUEFyltZPY/edit#gid=0';
+        });
+    </script>
 </body>
 </html>
