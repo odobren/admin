@@ -1,75 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Административная панель</title>
-    <style>
-        body {
-            background-color: yellow;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .admin-menu {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .admin-menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .admin-menu ul li {
-            margin-bottom: 10px;
-        }
-        .admin-menu ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .admin-menu ul li a:hover {
-            color: blue;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: blue;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: darkblue;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Желтый сайт</title>
+<!-- Подключаем Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffcc;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    #iframe-container {
+        width: 100%;
+        height: calc(100vh - 100px); /* Высота минус высота навигации */
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="admin-menu">
-            <h2>Меню администратора</h2>
-            <ul>
-                <li><a href="#">Настройки</a></li>
-                <li><a href="#">Пользователи</a></li>
-                <li><a href="#">Статистика</a></li>
-                <li><a href="#" id="btnWorkingHours">Рабочее время</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('btnWorkingHours').addEventListener('click', function() {
-            window.location.href = 'https://docs.google.com/spreadsheets/d/1S46rWz7XGKtt21wggySyaFjcHKFvmxsdfjUEFyltZPY/edit#gid=0';
-        });
-    </script>
+<div id="iframe-container">
+    <iframe id="iframe" src="main.html" frameborder="0"></iframe>
+</div>
+<!-- Используем Bootstrap для адаптивного меню -->
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="show-iframe">Рабочее время</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="show-main">Главная</a>
+        </li>
+    </ul>
+</nav>
+<script>
+    document.getElementById("show-iframe").addEventListener("click", function() {
+        document.getElementById("iframe").src = "https://docs.google.com/spreadsheets/d/1S46rWz7XGKtt21wggySyaFjcHKFvmxsdfjUEFyltZPY/edit#gid=0";
+    });
+    document.getElementById("show-main").addEventListener("click", function() {
+        document.getElementById("iframe").src = "main.html";
+    });
+</script>
+<!-- Подключаем Bootstrap JS для активации интерактивных компонентов -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
